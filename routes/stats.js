@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
       name: `properties/${PROPERTY_ID}:runReport`,
       dateRanges: [{ startDate: '7daysAgo', endDate: 'today' }],
       metrics: [
-        { name: 'activeUsers' },
+        { name: 'totalUsers' },
         { name: 'eventCount' }
       ],
       dimensionFilter: {
