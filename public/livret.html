@@ -106,7 +106,10 @@
       Vous souhaitant un bon séjour.
     </p>
     <div class="button-wrapper">
-      <a href="./livret_accueil.pdf" class="cta-button" target="_self">📘 Télécharger le livret d'accueil</a>
+      <a href="livret-accueil.pdf" target="_self"
+        onclick="gtag('event', 'download', {'event_category': 'Livret', 'event_label': 'Livret d\'accueil'});">
+        📘 Télécharger le livret d'accueil
+      </a>
     </div>
 
     <div class="button-wrapper">
@@ -132,12 +135,12 @@
   </footer>
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX "></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSTPWZ42BT "></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-G-VSTPWZ42BT');
   </script>
 
 </body>

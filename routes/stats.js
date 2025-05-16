@@ -3,7 +3,7 @@ const { BetaAnalyticsDataClient } = require('@google-analytics/data');
 const router = express.Router();
 
 // Remplacez par votre ID de propriété GA4
-const PROPERTY_ID = 'XXXXXXXXX';
+const PROPERTY_ID = 'G-VSTPWZ42BT';
 
 const client = new BetaAnalyticsDataClient({
   keyFilename: '../service-account.json'
