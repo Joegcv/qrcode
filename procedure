@@ -1,0 +1,45 @@
+ Application Express.js + HTML/JS hébergée gratuitement sur Render
+
+Structure
+mon-projet/
+│
+├── public/                  ← Fichiers statiques accessibles aux utilisateurs
+│   ├── index.html           ← Votre page d’accueil
+│   └── script.js            ← Script pour charger les stats
+│
+├── routes/
+│   └── stats.js             ← Route API `/stats` pour Google Analytics
+│
+├── package.json             ← Configuration du projet Node.js
+├── .gitignore               ← Ignore node_modules et fichiers sensibles
+├── service-account.json     ← Clé d'accès Google Cloud / Google Analytics
+└── index.js                 ← Point d'entrée Express
+
+-----------------------------------------------------------------------------
+Déploiement sur Render
+Créez un compte gratuit sur https://render.com
+Connectez votre dépôt GitHub ou importez manuellement le projet
+Choisissez Web Service
+Ajoutez votre fichier service-account.json dans le repo (ou comme secret si vous voulez le cacher)
+Laissez Render gérer le déploiement automatiquement
+
+
+accessible: https://votre-nom.onrender.com 
+les stats via: https://votre-nom.onrender.com/stats 
+
+Option : Garder l’app active (au cas où)
+Utilisez UptimeRobot pour pinger cette URL toutes les heures :
+https://votre-nom.onrender.com/health 
+
+----------------------------------------------------------------
+Limites à connaître
+Ce setInterval ne fonctionne que si ton app Express est active
+En cas de crash ou redémarrage, il se relance avec l’app
+Render peut parfois "tuer" les apps inactives pendant plusieurs heures → dans ce cas, mieux vaut un service externe aussi
+
+
+Pour être 100 % sûr que ton app reste active , configure à la fois :
+
+Une route /health + setInterval() dans ton projet Express
+Un monitor UptimeRobot pour pinger cette même route toutes les heures
+C’est la solution la plus robuste .
