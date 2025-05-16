@@ -43,3 +43,8 @@ Pour être 100 % sûr que ton app reste active , configure à la fois :
 Une route /health + setInterval() dans ton projet Express
 Un monitor UptimeRobot pour pinger cette même route toutes les heures
 C’est la solution la plus robuste .
+
+Intégrer google Analytics
+https://analytics.google.com/
+site web / https://qrcode-5o7u.onrender.com/ /Nom du flux: visited
+
